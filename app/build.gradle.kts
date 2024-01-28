@@ -4,11 +4,16 @@ plugins {
     id("org.sonarqube") version "4.4.1.3373"
 }
 
+val appVersionCode = 1
+val appVersionName = "1.0.0"
+
 sonar {
     properties {
         property("sonar.projectKey", "gl3m0s_omniapp")
         property("sonar.organization", "gl3m0s")
         property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.projectName", "Omni App")
+        property("sonar.projectVersion", appVersionName)
     }
 }
 
@@ -20,8 +25,8 @@ android {
         applicationId = "io.github.gl3m0s.omniapp"
         minSdk = 19
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = appVersionCode
+        versionName = appVersionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
